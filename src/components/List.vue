@@ -1,6 +1,9 @@
 <template>
   <div class="nav-list">
-    <div :class="['nav-li', 'bg-' + li.color]" v-for="li in list" :key="li.name">
+    <div :class="['nav-li', 'bg-' + li.color]"
+         v-for="li in list"
+         :key="li.name"
+         @click="navigateTo(li.name)">
       <div class="title">{{li.title}}</div>
       <div class="name">{{li.name}}</div>
     </div>
@@ -11,6 +14,11 @@
 export default {
   props: {
     list: Array
+  },
+  methods: {
+    navigateTo (to) {
+      this.$router.push(`/${to}`)
+    }
   }
 }
 </script>

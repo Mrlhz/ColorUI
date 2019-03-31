@@ -1,5 +1,11 @@
+@import 'color';
+@import 'icon';
+@import 'grid';
+@import 'shadow';
+
 .app-wrap {
   width: 100%;
+  padding-bottom: .93rem;
   font-size: .32rem;
 }
 

@@ -48,6 +48,87 @@ $colors: map-merge(
 @each $name,$color in $colors {
   .bg-#{$name} {
     background: $color;
-    color: #fff;
+    @if $color ==  $white{
+      color: #666;
+    } @else {
+      color: #fff;
+    }
   }
+}
+
+@each $name,$color in $colors {
+  .line-#{$name}::after,
+  .lines-#{$name}::after {
+    border-color: $color;
+  }
+}
+
+.bg-red.light {
+  color: $red;
+  background-color: #fadbd9;
+}
+
+.bg-orange.light {
+  color: $orange;
+  background-color: #fde6d2;
+}
+
+.bg-yellow.light {
+  color: $yellow;
+  background-color: #fef2ce;
+}
+
+.bg-olive.light {
+  color: $olive;
+  background-color: #e8f4d9;
+}
+
+.bg-green.light {
+  color: $green;
+  background-color: #d7f0db;
+}
+
+.bg-cyan.light {
+  color: $cyan;
+  background-color: #d2f1f0;
+}
+
+.bg-blue.light {
+  color: $blue;
+  background-color: #cce6ff;
+}
+
+.bg-purple.light {
+  color: $purple;
+  background-color: #e1d7f0;
+}
+
+.bg-mauve.light {
+  color: $mauve;
+  background-color: #ebd4ef;
+}
+
+.bg-pink.light {
+  color: $pink;
+  background-color: #f9d7ea;
+}
+
+.bg-brown.light {
+  color: $brown;
+  background-color: #ede1d9;
+}
+
+.bg-grey.light {
+  color: $grey;
+  background-color: #e7ebed;
+}
+
+.bg-gray.light {
+  color: #666;
+  background-color: #fadbd9;
+}
+
+.bg-gray.light {
+  color: #888;
+  background-color: #f1f1f1;
 }

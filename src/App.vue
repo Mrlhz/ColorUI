@@ -1,7 +1,6 @@
 <template>
   <div id="app" class="app-wrap">
-    <div id="nav"></div>
-    <div class="tab-bar">
+    <div id="nav" class="tab-bar">
       <ul>
         <li class="tab-item">
           <router-link to="/home">基础</router-link>
@@ -21,7 +20,15 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scope>
+#nav{
+  position: fixed;
+  left: auto;
+  right: auto;
+  bottom: 0;
+  width: 7.5rem;
+  z-index: 999;
+}
 .tab-bar {
   padding: 0 0.22rem;
   margin-bottom: 0;
@@ -49,14 +56,14 @@
     position: relative;
     overflow: hidden;
   }
-  .tab-item:after,
-  .tab-item:before {
+  .tab-active:after,
+  .tab-active:before {
     display: block;
     width: 0.15rem;
     height: 0.04rem;
     background: transparent;
     position: absolute;
-    bottom: 1px;
+    bottom: 0;
     content: " ";
   }
   .tab-item:before {
@@ -111,7 +118,7 @@
   height: 0.93rem;
 }
 
-.router-link-active{
+.router-link-active {
   color: $green-link;
 }
 </style>
