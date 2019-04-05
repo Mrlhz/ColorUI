@@ -1,4 +1,5 @@
-# vue-app
+# Vue-ColorUI
+>参考微信小程序ColorUI，学习用vue封装常用组件和样式
 
 ## Project setup
 ```

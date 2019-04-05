@@ -12,7 +12,7 @@
         </div>
       </template>
     </div>
-    <bar bgcolor="cyan" class="mt15">浅色背景</bar>
+    <bar bgcolor="cyan" class="mt-15">浅色背景</bar>
     <div class="row">
       <template v-for="item in colorList">
         <div class="col-wrap" :key="item.name">
@@ -50,9 +50,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mt15{
-  margin-top: .3rem;
-}
 .row {
   padding: 0.3rem;
   background: #fff;

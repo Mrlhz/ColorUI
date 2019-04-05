@@ -7,6 +7,22 @@
         <div :class="['col-'+ n]" :key="n">{{`${n}0%`}}</div>
       </template>
     </div>
+    <bar bgcolor="blue" class="mt-15">比例尺寸</bar>
+    <div class="row">
+      <div class="flex">
+        <div class="basics flex-sub">1</div>
+        <div class="basics flex-sub">1</div>
+      </div>
+      <div class="flex">
+        <div class="basics flex-sub">1</div>
+        <div class="basics flex-twice">2</div>
+      </div>
+      <div class="flex">
+        <div class="basics flex-sub">1</div>
+        <div class="basics flex-twice">2</div>
+        <div class="basics flex-treble">3</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,11 +39,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.row{
+.row {
   flex-direction: column;
   background: #fff;
 }
 
+.flex-sub {
+  flex: 1;
+}
+
+.flex-twice {
+  flex: 2;
+}
+
+.flex-treble {
+  flex: 3;
+}
+
+.basics,
 [class*="col-"] {
   margin: 0.1rem;
   padding: 0.2rem;

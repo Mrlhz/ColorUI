@@ -2,7 +2,7 @@
 
 ## 参考 
 - [ColorUI](https://github.com/weilanwl/ColorUI)
-- [colorful-ui](https://github.com/Keyves/colorful-ui)https://keyves.github.io/colorful-ui/#/button
+- [colorful-ui](https://github.com/Keyves/colorful-ui) https://keyves.github.io/colorful-ui/#/button
 - [从零实现Vue的组件库（零）- 基本结构以及构建工具](https://juejin.im/post/5c0b8ece5188254f9e2809fe)
 - [基于 vue-cli3 打造属于自己的 UI 库](https://juejin.im/post/5c95c61f6fb9a070c40acf65)
 - [了解如何在iPhone X 和所有iOS设备上设计视觉稿](https://www.ui.cn/detail/246980.html)
@@ -10,6 +10,13 @@
 - [从网易与淘宝的font-size思考前端设计稿与工作流](http://www.cnblogs.com/lyzg/p/4877277.html)
 - [移动端适配方案-让分辨率来的更猛烈些吧！](https://juejin.im/post/5bc7fb9ef265da0acd20ebeb)
 - [vueCli3搭建的vue-vuex-router开发模版](https://github.com/wangyupo/vue-vuex-router)
+- [前端工程化（3）：在项目中优雅的设计基于Axios的请求方案](https://juejin.im/post/5c9c6be8f265da610f7c186d)
+
+## UI
+
+- [网易新闻](https://3g.163.com/touch/#/)
+- [vuetify](https://github.com/vuetifyjs/vuetify) https://vuetifyjs.com/zh-Hans/getting-started/quick-start
+- [element](https://github.com/ElemeFE/element) http://element-cn.eleme.io/#/zh-CN/component/installation
 
 
 >`设备像素比 = 物理像素 / 设备独立像素 // 在某一方向上，x方向或者y方向`
@@ -80,7 +87,7 @@ Node各种资源
 
 
 - [x] 布局
-- [ ] 背景
+- [x] 背景 图片背景？
 - [ ] 文本
 - [ ] 图标 
 - [ ] 按钮
@@ -100,3 +107,8 @@ Node各种资源
 - [ ] 轮播
 - [ ] 模态框
 - [ ] 步骤条
+
+
+### todo
+
+- 如何更好定义公共样式？Bootstrap？

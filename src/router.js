@@ -45,6 +45,11 @@ export default new Router({
       path: '/background',
       name: 'background',
       component: () => import('./components/basics/Background.vue')
+    },
+    {
+      path: '/icon',
+      name: 'icon',
+      component: () => import('./components/basics/Icon.vue')
     }
   ]
 })
