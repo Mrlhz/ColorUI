@@ -14,6 +14,7 @@
         <div class="icon-name">{{item.name}}</div>
       </div>
     </div>
+    <div class="toast">没有内容匹配</div>
   </div>
 </template>
 
@@ -40,6 +41,7 @@ export default {
   },
   watch: {
     keyword () {
+      // console.count('runs times')
       // TODO not good
       let keyword = this.keyword
       let list = iconListData.icon
@@ -139,5 +141,24 @@ export default {
     margin-top: 0.2rem;
     font-size: 0.26rem;
   }
+}
+.toast {
+  /* width: 240rpx;
+  height: 70rpx;
+  background: rgba(17, 17, 17, 0.7);
+  color: #fff; */
+  position: fixed;
+  top: 180px;
+  left: 50%;
+  width: 7.6em;
+  // width: 2.5rem;
+  height: .7rem;
+  line-height: .7rem;
+  margin-left: -3.8em;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  background: rgba(17, 17, 17, 0.7);
+  z-index: 5000;
 }
 </style>

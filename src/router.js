@@ -55,6 +55,11 @@ export default new Router({
       path: '/tag',
       name: 'tag',
       component: () => import('./components/basics/Tag.vue')
+    },
+    {
+      path: '/animation',
+      name: 'animation',
+      component: () => import('./components/plugin/Animation.vue')
     }
   ]
 })

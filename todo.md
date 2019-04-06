@@ -11,12 +11,24 @@
 - [移动端适配方案-让分辨率来的更猛烈些吧！](https://juejin.im/post/5bc7fb9ef265da0acd20ebeb)
 - [vueCli3搭建的vue-vuex-router开发模版](https://github.com/wangyupo/vue-vuex-router)
 - [前端工程化（3）：在项目中优雅的设计基于Axios的请求方案](https://juejin.im/post/5c9c6be8f265da610f7c186d)
-
+- [移动端页面适配———多方案解析](https://juejin.im/entry/59ca3c6df265da064f2024af)
 ## UI
 
 - [网易新闻](https://3g.163.com/touch/#/)
 - [vuetify](https://github.com/vuetifyjs/vuetify) https://vuetifyjs.com/zh-Hans/getting-started/quick-start
 - [element](https://github.com/ElemeFE/element) http://element-cn.eleme.io/#/zh-CN/component/installation
+
+## 
+
+- [animate.css](https://daneden.github.io/animate.css/)
+
+
+## 
+
+- [可以生成指定尺寸图片的网站](https://dummyimage.com/)
+- [stylie工具轻松搞定css3抛物线动画](http://jeremyckahn.github.io/stylie/)
+示例
+`https://dummyimage.com/600x400.png/8dc63/fff&text=ColorUI`
 
 
 >`设备像素比 = 物理像素 / 设备独立像素 // 在某一方向上，x方向或者y方向`
@@ -50,6 +62,8 @@ px|rem
 32px  | 0.64rem | 64rpx
 36px  | 0.72rem | 72rpx
 50px  | 1rem    | 100rpx
+
+iphone6/7/8 : 1rem === 55.2px
 
 
 - CSS权重
@@ -91,7 +105,7 @@ Node各种资源
 - [ ] 文本
 - [x] 图标 
 - [ ] 按钮
-- [x] 标签
+- [ ] 标签
 - [ ] 头像
 - [ ] 进度条
 - [ ] 边框阴影
@@ -113,3 +127,4 @@ Node各种资源
 
 - 如何更好定义公共样式？Bootstrap？
 - html页面内容超出后显示水平滚动条的问题https://www.cnblogs.com/JennyLin77/p/5308603.html
+- 响应式（RWD） = 所有设备的代码是一样的 / 自适应（AWD）= 不同设备的代码是不一样的 ？
