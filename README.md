@@ -1,6 +1,8 @@
 # Vue-ColorUI
 >参考微信小程序ColorUI，学习用vue封装常用组件和样式
 
+- ColorUI官方组件库for uni-app，高颜值示例](http://demo.color-ui.com/#/)
+
 ## Project setup
 ```
 npm install

@@ -85,6 +85,12 @@ textarea {
   height: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 13.33333vw
 }
@@ -197,10 +203,4 @@ html a {
     width: 768px;
     margin: 0 auto
   }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
