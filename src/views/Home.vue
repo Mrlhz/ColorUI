@@ -37,5 +37,6 @@ export default {
 img {
   display: inline-block;
   width: 100%;
+  height: 4.861rem;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="component">
-    <img alt="Basics logo" src="../assets/images/componentBg.png">
+    <img class="logo" alt="Component logo" src="../assets/images/componentBg.png">
     <home-list :list="list"></home-list>
   </div>
 </template>
@@ -42,8 +42,9 @@ export default {
 </script>
 
 <style lang="scss">
-img {
+img.logo {
   display: inline-block;
   width: 100%;
+  height: 4.861rem;
 }
 </style>

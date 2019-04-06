@@ -50,6 +50,11 @@ export default new Router({
       path: '/icon',
       name: 'icon',
       component: () => import('./components/basics/Icon.vue')
+    },
+    {
+      path: '/tag',
+      name: 'tag',
+      component: () => import('./components/basics/Tag.vue')
     }
   ]
 })
