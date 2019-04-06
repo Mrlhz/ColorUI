@@ -1,0 +1,36 @@
+{
+  "list": [
+    {
+      "name": "fade",
+      "color": "red"
+    },
+    {
+      "name": "scale-up",
+      "color": "orange"
+    },
+    {
+      "name": "scale-down",
+      "color": "olive"
+    },
+    {
+      "name": "slide-top",
+      "color": "green"
+    },
+    {
+      "name": "slide-bottom",
+      "color": "cyan"
+    },
+    {
+      "name": "slide-left",
+      "color": "blue"
+    },
+    {
+      "name": "slide-right",
+      "color": "purple"
+    },
+    {
+      "name": "shake",
+      "color": "mauve"
+    }
+  ]
+}

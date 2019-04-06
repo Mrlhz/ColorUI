@@ -1,21 +1,35 @@
 <template>
   <div class="plugin">
     <div class="cu-card">
-      <div class="cu-item bg-img1 shadow-blur">
-        <div class="cardTitle">索引列表</div>
-      </div>
-      <div class="cu-item bg-img2 shadow-blur">
-        <div class="cardTitle">微动画</div>
-      </div>
-      <div class="cu-item bg-img3 shadow-blur">
-        <div class="cardTitle">全屏抽屉</div>
-      </div>
-      <div class="cu-item bg-img4 shadow-blur">
-        <div class="cardTitle">垂直导航</div>
+      <div :class="['cu-item', 'bg-img'+(index+1), 'shadow-blur']"
+           v-for="(item, index) in list"
+           :key="item.name"
+           @click="navigateTo(item.name)">
+        <div class="cardTitle">{{item.title}}</div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+
+const pluginList = require('static/plugin.json')
+export default {
+  data () {
+    return {
+      list: []
+    }
+  },
+  methods: {
+    navigateTo (to) {
+      this.$router.push(`/${to}`)
+    }
+  },
+  created () {
+    this.list = pluginList.list
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .cu-card {

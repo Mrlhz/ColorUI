@@ -1,0 +1,20 @@
+{
+  "list": [
+    {
+      "name": "indexes",
+      "title": "索引列表"
+    },
+    {
+      "name": "animation",
+      "title": "微动画"
+    },
+    {
+      "name": "drawer",
+      "title": "全屏抽屉"
+    },
+    {
+      "name": "verticalnav",
+      "title": "垂直导航"
+    }
+  ]
+}

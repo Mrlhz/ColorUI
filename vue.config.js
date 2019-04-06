@@ -22,6 +22,7 @@ module.exports = {
       .set('api', resolve('src/api'))
       .set('assets', resolve('src/assets'))
       .set('components', resolve('src/components'))
+      .set('static', resolve('static'))
   }
 }
 
