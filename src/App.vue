@@ -17,9 +17,20 @@
       </ul>
     </div>
     <router-view/>
+    <back-top/>
   </div>
 </template>
 
+<script>
+
+import backTop from 'components/backTop'
+
+export default {
+  components: {
+    backTop
+  }
+}
+</script>
 <style lang="scss" scope>
 #nav{
   position: fixed;

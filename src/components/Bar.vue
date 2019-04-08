@@ -1,7 +1,10 @@
 <template>
   <div class="bar">
-    <span :class="['icon-dot','bg-'+ bgcolor]"></span>
-    <slot>导航</slot>
+    <div class="barleft">
+      <span :class="['icon-dot','bg-'+ bgcolor]"></span>
+      <slot>导航</slot>
+    </div>
+    <slot name="barright"></slot>
   </div>
 </template>
 
@@ -19,9 +22,10 @@ export default {
 <style lang="scss" scoped>
 .bar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  // height: .8rem;
+  height: .9963rem;
   padding: .2rem .3rem;
   font-size: .32rem;
   border-bottom: .01rem solid rgba(0, 0, 0, 0.1);

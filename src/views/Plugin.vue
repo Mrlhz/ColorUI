@@ -42,6 +42,7 @@ export default {
     background-position: 50%;
     background-repeat: no-repeat;
     overflow: initial;
+    cursor: pointer;
   }
   @for $i from 1 through 4 {
     .bg-img#{$i} {

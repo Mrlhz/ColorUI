@@ -132,3 +132,13 @@ $colors: map-merge(
   color: #888;
   background-color: #f1f1f1;
 }
+
+/* ==================
+          文本
+ ==================== */
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color;
+  }
+}
