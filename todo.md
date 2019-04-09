@@ -12,6 +12,8 @@
 - [vueCli3搭建的vue-vuex-router开发模版](https://github.com/wangyupo/vue-vuex-router)
 - [前端工程化（3）：在项目中优雅的设计基于Axios的请求方案](https://juejin.im/post/5c9c6be8f265da610f7c186d)
 - [移动端页面适配———多方案解析](https://juejin.im/entry/59ca3c6df265da064f2024af)
+- [Vue 源码中一些util函数](https://juejin.im/post/5c601f32f265da2ddf786491)
+
 ## UI
 
 - [网易新闻](https://3g.163.com/touch/#/)
