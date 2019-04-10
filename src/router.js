@@ -65,6 +65,11 @@ export default new Router({
       path: '/animation',
       name: 'animation',
       component: () => import('./components/plugin/Animation.vue')
+    },
+    {
+      path: '/modal',
+      name: 'modal',
+      component: () => import('./components/components/Modal.vue')
     }
   ]
 })

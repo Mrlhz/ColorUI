@@ -1,0 +1,42 @@
+$default: #fff;
+$primary: #7cd1f9;
+$success: #67c23a;
+$info: #909399;
+$warning: #e6a23c;
+$danger: #e64942;
+
+
+.btn {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  text-align: center;
+  border: none;
+  color: #fff;
+  outline: none;
+  user-select: none;
+}
+
+.btn-sm {
+  padding: 0 .2rem;
+  font-size: .24rem;
+  height: .48rem;
+  border-radius: .06rem;
+}
+
+.btn-md {
+  padding: 0 .32rem;
+  font-size: .32rem;
+  height: .64rem;
+  border-radius: .08rem;
+}
+
+.btn-lg {
+  padding: 0 .4rem;
+  font-size: .36rem;
+  height: .8rem;
+  border-radius: .12rem;
+}
