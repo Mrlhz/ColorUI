@@ -14,7 +14,7 @@
         <div class="icon-name">{{item.name}}</div>
       </div>
     </div>
-    <div class="toast">没有内容匹配</div>
+    <!-- <div class="toast" v-show="toast">没有内容匹配</div> -->
   </div>
 </template>
 
@@ -31,7 +31,8 @@ export default {
     return {
       iconList: [],
       keyword: '',
-      timer: null
+      timer: null,
+      toast: false
     }
   },
   computed: {
@@ -56,8 +57,14 @@ export default {
         }
         if (result.length > 0) {
           this.iconList = result
+          this.toast = false
         } else {
           this.iconList = iconListData.icon
+          this.toast = true
+          this.$Alert.info({
+            content: `没有${this.keyword}内容匹配`,
+            duration: 1
+          })
         }
       }, 100)
     }

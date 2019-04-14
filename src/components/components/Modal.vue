@@ -62,14 +62,13 @@ export default {
 }
 
 .preview {
-	background-color: #a3dd82;
+  padding: 9px 18px;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
   border-radius: 4px;
   border: none;
-  color: #fff;
   font-size: 15px;
+	background: #a3dd82;
   color: #fff;
-  padding: 9px 18px;
   cursor: pointer;
   // margin-top: 20px;
 }
