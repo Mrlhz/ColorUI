@@ -62,6 +62,11 @@ export default new Router({
       component: () => import('./components/basics/Button.vue')
     },
     {
+      path: '/loading',
+      name: 'loading',
+      component: () => import('./components/basics/Loading.vue')
+    },
+    {
       path: '/animation',
       name: 'animation',
       component: () => import('./components/plugin/Animation.vue')
