@@ -2,13 +2,29 @@
   <div>
     <back>加载</back>
     <bar bgcolor="green">Loading</bar>
-    <div class="loading">
-      <div class="loading-bar"></div>
-      <div class="loading-bar"></div>
-      <div class="loading-bar"></div>
-      <div class="loading-bar"></div>
+    <div class="wrap">
+      <div class="item">
+        <div class="loading">
+          <div class="loading-bar"></div>
+          <div class="loading-bar"></div>
+          <div class="loading-bar"></div>
+          <div class="loading-bar"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="spinner"></div>
+      </div>
+      <div class="item">
+        <div id="loader6">
+          <div id="squircle1" class="squircle"></div>
+          <div id="squircle2" class="squircle">
+            <br>
+          </div>
+          <div id="squircle4" class="squircle"></div>
+          <div id="squircle3" class="squircle"></div>
+        </div>
+      </div>
     </div>
-    <div class="spinner"></div>
   </div>
 </template>
 
@@ -31,11 +47,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.loading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  .item {
+    display: flex;
+    justify-content: center;
+    flex-basis: 50%;
+  }
 }
+// .loading {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+// }
 .loading-bar {
   display: inline-block;
   width: 4px;
@@ -103,4 +130,73 @@ export default {
     background-color: #c0392b;
   }
 }
+
+// ----
+#loader6 {
+  margin: 100px;
+  width: 65px;
+  line-height: 0px;
+  height: 65px;
+  animation-name: rotateLoader6;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: 50% 50%;
+}
+.squircle {
+  width: 30px;
+  height: 30px;
+  background: #000;
+  display: inline-block;
+  margin: 0;
+  border: 1px #fff solid;
+  vertical-align: top;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+#squircle1 {
+  animation-name: squircle;
+  transform-origin: 100% 100%;
+  background: #ea4335;
+}
+#squircle2 {
+  animation-name: squircle;
+  transform-origin: 0% 100%;
+  background: #34a853;
+}
+#squircle3 {
+  animation-name: squircle;
+  transform-origin: 0% 0%;
+  background: #fbbc05;
+}
+#squircle4 {
+  animation-name: squircle;
+  transform-origin: 100% 100%;
+  background: #4285f4;
+}
+@keyframes rotateLoader6 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes squircle {
+  0% {
+    border-radius: 0px;
+  }
+  50% {
+    border-radius: 15px;
+    margin: 5px;
+    width: 19px;
+    height: 19px;
+  }
+  100% {
+    border-radius: 0px;
+  }
+}
+// -----
 </style>
