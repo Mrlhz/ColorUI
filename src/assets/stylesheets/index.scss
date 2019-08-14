@@ -5,19 +5,119 @@
 @import 'animation';
 
 // margin-top:15px
-.mt-15{
+.mt-15 {
   margin-top: .3rem;
 }
 
-.flex{
+.flex {
   display: flex;
 }
+
 .app-wrap {
   width: 100%;
   padding-bottom: .93rem;
   font-size: .32rem;
 }
 
-.flex{
+.flex {
   display: flex;
+}
+
+.padding15 {
+  padding: 0.3rem;
+}
+
+.padding10 {
+  padding: .2rem;
+}
+
+.margin-bottom10 {
+  margin-bottom: .2rem;
+}
+
+.margin-bottom15 {
+  margin-bottom: .3rem;
+}
+
+.margin-left-10 {
+  margin-left: .2rem;
+}
+
+.font-size-10 {
+  font-size: 0.2rem;
+}
+
+.font-size-12 {
+  font-size: 0.24rem;
+}
+
+.font-size-14 {
+  font-size: 0.28rem;
+}
+
+.font-size-22 {
+  font-size: 0.44rem;
+}
+
+.font-size-40 {
+  font-size: 0.8rem;
+}
+
+.font-size-60 {
+  font-size: 1.2rem;
+}
+
+.radius {
+  border-radius: .06rem;
+}
+
+.round {
+  border-radius: 50% !important;
+}
+
+.round2666 {
+  border-radius: 2666px;
+}
+
+.solid-bottom:after {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.modal-open {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.img1 {
+  background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);
+}
+.img2 {
+  background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);
+}
+.img3 {
+  background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);
+}
+.img4 {
+  background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);
+}
+.img5 {
+  background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);
+}
+.img6 {
+  background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10002.jpg);
+}
+.img7 {
+  background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10003.jpg);
+}
+.img8 {
+  background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91005.jpg);
 }
