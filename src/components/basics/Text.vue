@@ -130,10 +130,9 @@ export default {
       list: []
     }
   },
-  inject: ['colorList'],
+  inject: ['colorListApp'],
   created () {
-    const { colorList } = this.colorList
-    this.list = colorList
+    this.list = this.colorListApp
   }
 }
 </script>

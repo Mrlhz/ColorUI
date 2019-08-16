@@ -1,6 +1,9 @@
 <template>
   <div>
-    <back>背景</back>
+    <back>
+      <slot>背景</slot>
+      <!-- <template v-slot:right></template> -->
+    </back>
     <bar bgcolor="blue">深色背景</bar>
     <div class="row">
       <template v-for="item in colorList">
@@ -30,21 +33,19 @@
 import Back from '../Back'
 import Bar from '../Bar'
 
-const colorListData = require('../../../static/colorList.json')
-
 export default {
   components: {
     Back,
     Bar
   },
+  inject: ['colorListApp'],
   data () {
     return {
       colorList: []
     }
   },
   created () {
-    const { colorList } = colorListData
-    this.colorList = colorList
+    this.colorList = this.colorListApp
   }
 }
 </script>

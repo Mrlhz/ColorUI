@@ -92,21 +92,19 @@
 import Back from '../Back'
 import Bar from '../Bar'
 
-const colorListData = require('../../../static/colorList.json')
-
 export default {
   components: {
     Back,
     Bar
   },
+  inject: ['colorListApp'],
   data () {
     return {
       colorList: []
     }
   },
   created () {
-    const { colorList } = colorListData
-    this.colorList = colorList
+    this.colorList = this.colorListApp
   }
 }
 </script>

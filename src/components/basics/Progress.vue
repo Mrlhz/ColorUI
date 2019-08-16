@@ -106,7 +106,7 @@ export default {
       scrollTop: 0
     }
   },
-  inject: ['colorList'],
+  inject: ['colorListApp'],
   methods: {
     open () {
       this.show = !this.show
@@ -117,9 +117,10 @@ export default {
       this.beforeClose()
     },
     handleClick (e) {
-      console.log(e.target.classList[1])
-      this.className = e.target.classList[1]
-      this.colse()
+      if (e.target.classList[0] === 'item') {
+        this.className = e.target.classList[1]
+        this.colse()
+      }
     },
     afterOpen () {
       this.$nextTick(() => {
@@ -138,8 +139,7 @@ export default {
     }
   },
   created () {
-    const { colorList } = this.colorList
-    this.list = colorList
+    this.list = this.colorListApp
   }
 }
 </script>

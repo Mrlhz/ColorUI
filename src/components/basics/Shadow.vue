@@ -29,11 +29,7 @@ export default {
       list: []
     }
   },
-  inject: ['colorList'],
-  created () {
-    const { colorList } = this.colorList
-    this.list = colorList
-  }
+  created () {}
 }
 </script>
 
