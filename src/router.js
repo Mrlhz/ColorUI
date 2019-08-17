@@ -13,28 +13,24 @@ Vue.use(Router)
  * @returns
  * @todo 可以把`basics`，`components`，`plugin`统一处理，减少全局变量
  */
-function getRouters (dir, context) {
-  return context.keys().map((url) => {
-    const start = url.indexOf('/')
+function getRouters () {
+  // require.context中要搜索的目录不能动态拼接，true 搜索它的子目录
+  return require.context('components', true, /\.vue$/).keys().map((url) => {
+    const component = url.replace('./', '') // './basics/Avatar.vue' => 'basics/Avatar.vue'
+    const start = url.lastIndexOf('/')
     const end = url.lastIndexOf('.')
-    const name = url.substring(start + 1, end) // './Background.vue' => 'background'
+    const name = url.substring(start + 1, end) // './basics/Avatar.vue' => 'Avatar'
     const path = `/${name}`.toLowerCase()
-    console.log()
     return {
       path,
       name,
-      component: require(`components/${dir}/${name}.vue`).default
+      component: require(`components/${component}`).default
     }
   })
 }
 
-const basicsContext = require.context('components/basics', false, /\.vue$/) // require.context中要搜索的目录不能动态拼接，false 不搜索它的子目录
-const componentContext = require.context('components/components', false, /\.vue$/)
-const pluginContext = require.context('components/plugin', false, /\.vue$/)
-
-const basicsRouters = getRouters('basics', basicsContext)
-const componentRouters = getRouters('components', componentContext)
-const pluginRouters = getRouters('plugin', pluginContext)
+const routers = getRouters()
+// console.log(routers)
 
 export default new Router({
   mode: 'history',
@@ -68,18 +64,6 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
-    // {
-    //   path: '/animation',
-    //   name: 'animation',
-    //   component: () => import('./components/plugin/Animation.vue')
-    // },
-    // {
-    //   path: '/modal',
-    //   name: 'modal',
-    //   component: () => import('./components/components/Modal.vue')
-    // },
-    ...basicsRouters,
-    ...componentRouters,
-    ...pluginRouters
+    ...routers
   ]
 })
