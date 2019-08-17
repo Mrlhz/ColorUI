@@ -89,8 +89,8 @@
 </template>
 
 <script>
-import Back from '../Back'
-import Bar from '../Bar'
+import Back from 'common/Back'
+import Bar from 'common/Bar'
 
 export default {
   components: {

@@ -23,11 +23,15 @@
 
 <script>
 
-import backTop from 'components/backTop'
+import backTop from 'common/backTop'
+const { colorList: colorListApp } = require('static/colorList.json')
 
 export default {
   components: {
     backTop
+  },
+  provide: {
+    colorListApp
   }
 }
 </script>

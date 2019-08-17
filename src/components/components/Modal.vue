@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import Back from '../Back'
-import Bar from '../Bar'
+import Back from 'common/Back'
+import Bar from 'common/Bar'
 
 export default {
   components: {
@@ -67,8 +67,8 @@ export default {
   border-radius: 4px;
   border: none;
   font-size: 15px;
-	background: #a3dd82;
   color: #fff;
+  background-color: #a3dd82;
   cursor: pointer;
   // margin-top: 20px;
 }

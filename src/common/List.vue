@@ -35,7 +35,8 @@ export default {
     border-radius: 0.24rem;
     padding: 0.3rem;
     margin: 0 2.5% 0.4rem;
-    background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+    // background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+    background-image: url(../assets/images/cardBg.png);
     background-size: cover;
     background-position: 50%;
     position: relative;

@@ -7,7 +7,7 @@
 
 <script>
 // @ is an alias to /src
-import HomeList from '@/components/List.vue'
+import HomeList from 'common/List.vue'
 
 import { getComponentList } from 'api/index'
 

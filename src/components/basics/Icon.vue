@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Back from '../Back'
+import Back from 'common/Back'
 
 const iconListData = require('../../../static/iconList.json')
 

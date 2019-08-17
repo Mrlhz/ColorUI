@@ -40,5 +40,11 @@ export default {
     border-radius: 50%;
     // background: #0081ff;
   }
+  .barleft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: .9963rem;
+  }
 }
 </style>
