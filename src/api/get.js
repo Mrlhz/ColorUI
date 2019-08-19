@@ -36,3 +36,18 @@ export function get (url) {
     })
   }
 }
+
+export function http (url) {
+  return async function (params) {
+    try {
+      const { data: { errno, data: res } } = await axios.get(url, { params })
+      console.log(res, errno)
+      if (errno === ERR_OK) {
+        return res
+      }
+    } catch (error) {
+      console.log(error)
+      return error
+    }
+  }
+}
