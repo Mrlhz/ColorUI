@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h3>具有数据校验功能的表单组件——Form</h3>
+    <back>表单</back>
+    <bar bgcolor="blue">具有数据校验功能的表单组件</bar>
     <i-form ref="form" :model="formValidate" :rules="ruleValidate">
       <i-form-item label="用户名" prop="name">
         <i-input v-model="formValidate.name"></i-input>
@@ -8,18 +9,24 @@
       <i-form-item label="邮箱" prop="mail">
         <i-input v-model="formValidate.mail"></i-input>
       </i-form-item>
+      <i-form-item label="号码" prop="phone">
+        <i-input v-model="formValidate.phone"></i-input>
+      </i-form-item>
     </i-form>
     <button @click="handleSubmit">提交</button>
     <button @click="handleReset">重置</button>
   </div>
 </template>
 <script>
+import Back from 'common/Back'
+import Bar from 'common/Bar'
+
 import iForm from '../../common/Form/form'
 import iFormItem from '../../common/Form/form-item'
 import iInput from '../../common/Form/input'
 
 export default {
-  components: { iForm, iFormItem, iInput },
+  components: { Back, Bar, iForm, iFormItem, iInput },
   data () {
     return {
       formValidate: {
@@ -39,9 +46,9 @@ export default {
     handleSubmit () {
       this.$refs.form.validate(valid => {
         if (valid) {
-          window.alert('提交成功')
+          console.log('提交成功')
         } else {
-          window.alert('表单校验失败')
+          console.log('表单校验失败')
         }
       })
     },

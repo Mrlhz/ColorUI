@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="form-item">
     <label
       v-if="label"
-      :class="{ 'i-form-item-label-required': isRequired }"
+      :class="['form-item-label', isRequired ? 'i-form-item-label-required': '']"
     >
       {{ label }}
     </label>
-    <div>
+    <div class="form-item-content">
       <slot></slot>
       <div
         v-if="validateState === 'error'"
@@ -69,6 +69,7 @@ export default {
     setRules () {
       const rules = this.getRules()
       if (rules.length) {
+        // forEach can do
         rules.every((rule) => {
           this.isRequired = rule.required
         })
@@ -78,7 +79,7 @@ export default {
     },
     getFilteredRule (trigger) {
       const rules = this.getRules()
-      return rules.filter((rule) => !rule.trigger || rule.trigger.indexOf(trigger) !== 1)
+      return rules.filter((rule) => !rule.trigger || rule.trigger.indexOf(trigger) !== -1)
     },
     validate (trigger, callback) {
       const rules = this.getFilteredRule(trigger)
@@ -88,20 +89,20 @@ export default {
       // 设置状态为校验中
       this.validateState = 'validating'
 
-      const descriptor = {}
-
-      descriptor[this.prop] = rules
+      const descriptor = {
+        [this.prop]: rules
+      }
 
       const validator = new AsyncValidator(descriptor)
-      const model = {}
-
-      model[this.prop] = this.fieldValue
+      const model = {
+        [this.prop]: this.fieldValue
+      }
 
       validator.validate(model, { firstFields: true }, (errors) => {
         this.validateState = !errors ? 'success' : 'error'
         this.validateMessage = errors ? errors[0].message : ''
 
-        callback(this.validateMessage)
+        typeof callback === 'function' && callback(this.validateMessage)
       })
     }
   },

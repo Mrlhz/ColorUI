@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form autocomplete="off">
     <slot></slot>
   </form>
 </template>
@@ -26,7 +26,7 @@ export default {
     }
   },
   methods: {
-    // 公开方法：全部重置数据
+    // 公开方法：重置全部数据
     resetFields () {
       this.fields.forEach(field => {
         field.resetField()
@@ -40,6 +40,7 @@ export default {
         this.fields.forEach((field) => {
           field.validate('', (errors) => {
             if (errors) valid = false
+            // 遍历结束，校验完成
             if (++count === this.fields.length) {
               resolve(valid)
               typeof callback === 'function' && callback(valid)
