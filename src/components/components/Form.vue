@@ -31,13 +31,29 @@ export default {
     return {
       formValidate: {
         name: '',
-        mail: ''
+        mail: '',
+        phone: ''
       },
       ruleValidate: {
         name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
         mail: [
           { required: true, message: '邮箱不能为空', trigger: 'blur' },
           { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
+        ],
+        phone: [
+          // bug
+          // { type: 'number', message: '手机号码格式不正确', trigger: 'blur' },
+          {
+            required: true,
+            validator (rule, value, callback, source, options) {
+              const errors = []
+              if (!/^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test(value)) {
+                // errors.push(new Error(`${rule.field} must be a phone number`))
+                errors.push(new Error('手机号码格式不正确'))
+              }
+              return errors
+            }
+          }
         ]
       }
     }

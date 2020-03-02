@@ -2,7 +2,7 @@
   <div class="form-item">
     <label
       v-if="label"
-      :class="['form-item-label', isRequired ? 'i-form-item-label-required': '']"
+      :class="['form-item-label', isRequired ? 'form-item-required': '']"
     >
       {{ label }}
     </label>
@@ -10,7 +10,7 @@
       <slot></slot>
       <div
         v-if="validateState === 'error'"
-        class="i-form-item-message">
+        class="form-item-error-tip">
         {{ validateMessage }}
       </div>
     </div>
@@ -120,12 +120,3 @@ export default {
   }
 }
 </script>
-<style>
-  .i-form-item-label-required:before {
-    content: '*';
-    color: red;
-  }
-  .i-form-item-message {
-    color: red;
-  }
-</style>
