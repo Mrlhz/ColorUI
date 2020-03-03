@@ -107,3 +107,75 @@ $blackShadow: rgba(26, 26, 26, 0.2);
   font-size: .24rem;
   color: #ed4014;
 }
+
+
+/* ==================
+        按钮
+ ==================== */
+ .btn {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  border: none;
+  outline: none;
+  user-select: none;
+  &.disabled {
+    cursor: not-allowed;
+    opacity: .65;
+  }
+}
+
+.btn-sm {
+  padding: 0 .2rem;
+  font-size: .24rem;
+  height: .48rem;
+  border-radius: .06rem;
+}
+
+.btn-md {
+  padding: 0 .32rem;
+  font-size: .32rem;
+  height: .64rem;
+  border-radius: .08rem;
+}
+
+.btn-lg {
+  padding: 0 .4rem;
+  font-size: .36rem;
+  height: .8rem;
+  border-radius: .12rem;
+}
+
+.btn-default {
+  color: #606266;
+  background-color: #fff;
+  border: 1px solid #dcdfe6;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #409eff;
+}
+.btn-success {
+  color: #fff;
+  background-color: #67c23a;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #909399;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #e6a23c;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #f56c6c;
+}
