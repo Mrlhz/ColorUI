@@ -53,18 +53,12 @@
       </p>
       <bar bgcolor="blue">禁用状态</bar>
       <p class="demo ">
-        <Button size="md" type="default">禁用按钮</Button>
-        <Button size="md" type="primary">禁用按钮</Button>
-        <Button size="md" type="success">禁用按钮</Button>
-        <Button size="md" type="info">禁用按钮</Button>
-        <Button size="md" type="warning">禁用按钮</Button>
+        <Button size="md" type="default" disabled>禁用按钮</Button>
+        <Button size="md" type="primary" disabled>禁用按钮</Button>
+        <Button size="md" type="success" disabled>禁用按钮</Button>
+        <Button size="md" type="info" disabled>禁用按钮</Button>
+        <Button size="md" type="warning" disabled>禁用按钮</Button>
         <Button size="md" type="danger" disabled>禁用按钮</Button>
-        <a class="btn btn-md btn-default disabled">禁用按钮</a>
-        <a class="btn btn-md btn-primary disabled">禁用按钮</a>
-        <a class="btn btn-md btn-success disabled">禁用按钮</a>
-        <a class="btn btn-md btn-info disabled">禁用按钮</a>
-        <a class="btn btn-md btn-warning disabled">禁用按钮</a>
-        <a class="btn btn-md btn-danger disabled">禁用按钮</a>
       </p>
     </div>
   </div>

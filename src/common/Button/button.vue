@@ -1,6 +1,6 @@
 <template>
   <button :class="classes" :disabled="disabled">
-    <span :class="icons" v-if="icons"></span>
+    <span :class="icons" v-if="icon"></span>
     <slot></slot>
   </button>
 </template>
@@ -39,7 +39,8 @@ export default {
         `${prefixCls}-${this.type}`,
         {
           [`${prefixCls}-${this.size}`]: this.size !== 'default'
-        }
+        },
+        this.disabled ? 'disabled' : ''
       ]
     },
     icons () {
