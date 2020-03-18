@@ -1,11 +1,13 @@
 <template>
   <div class="nav-list">
-    <div :class="['nav-li', 'bg-' + li.color]"
-         v-for="li in list"
-         :key="li.name"
-         @click="navigateTo(li.name)">
-      <div class="title">{{li.title}}</div>
-      <div class="name">{{li.name}}</div>
+    <div
+      :class="['nav-li', 'bg-' + item.color]"
+      v-for="item in list"
+      :key="item.name"
+      @click="navigateTo(item.name)"
+    >
+      <div class="title">{{item.title}}</div>
+      <div class="name">{{item.name}}</div>
     </div>
   </div>
 </template>

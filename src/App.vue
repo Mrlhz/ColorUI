@@ -23,7 +23,7 @@
 
 <script>
 
-import backTop from 'common/backTop'
+import backTop from 'basics/backTop'
 const { colorList: colorListApp } = require('static/colorList.json')
 
 export default {

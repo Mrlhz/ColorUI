@@ -24,7 +24,7 @@ export default {
     add (notice) {
       const name = getUuid()
 
-      let _notice = Object.assign(
+      const _notice = Object.assign(
         {
           name: name
         },

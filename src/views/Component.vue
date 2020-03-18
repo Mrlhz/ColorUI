@@ -7,7 +7,7 @@
 
 <script>
 // @ is an alias to /src
-import HomeList from 'common/List.vue'
+import HomeList from 'basics/List.vue'
 
 import { getComponentList } from 'api/index'
 
@@ -42,9 +42,13 @@ export default {
 </script>
 
 <style lang="scss">
-img.logo {
+.component {
+  position: relative;
+  // height: 100vh;
+  img.logo {
   display: inline-block;
   width: 100%;
   height: 4.861rem;
+  }
 }
 </style>

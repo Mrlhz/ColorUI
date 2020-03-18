@@ -1,4 +1,5 @@
 const path = require('path')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   publicPath: '/',
@@ -9,8 +10,8 @@ module.exports = {
       // 给 sass-loader 传递选项
       sass: {
         // @/ 是 src/ 的别名
-        // 所以这里假设你有 `src/variables.scss` 这个文件
-        data: `@import "@/assets/stylesheets/imports.scss";`
+        // 所以这里假设你有 `src/assets/stylesheets/imports.scss` 这个文件
+        prependData: "@import '@/assets/stylesheets/imports.scss';"
       }
     }
   },
@@ -21,8 +22,15 @@ module.exports = {
       .set('@', resolve('src'))
       .set('api', resolve('src/api'))
       .set('assets', resolve('src/assets'))
+      .set('basics', resolve('src/basics'))
+      .set('common', resolve('src/common'))
       .set('components', resolve('src/components'))
       .set('static', resolve('static'))
+  },
+  configureWebpack: {
+    plugins: [
+      new BundleAnalyzerPlugin()
+    ]
   }
 }
 

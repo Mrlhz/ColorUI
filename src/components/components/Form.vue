@@ -13,20 +13,19 @@
         <i-input v-model="formValidate.phone"></i-input>
       </i-form-item>
     </i-form>
-    <button @click="handleSubmit">提交</button>
-    <button @click="handleReset">重置</button>
+
+    <Button size="md" type="primary" @click="handleSubmit">提交</Button>
+    <Button size="md" type="default" @click="handleReset">重置</Button>
   </div>
 </template>
 <script>
-import Back from 'common/Back'
-import Bar from 'common/Bar'
 
-import iForm from '../../common/Form/form'
-import iFormItem from '../../common/Form/form-item'
-import iInput from '../../common/Form/input'
+import iForm from 'basics/Form/form'
+import iFormItem from 'basics/Form/form-item'
+import iInput from 'basics/Form/input'
 
 export default {
-  components: { Back, Bar, iForm, iFormItem, iInput },
+  components: { iForm, iFormItem, iInput },
   data () {
     return {
       formValidate: {
@@ -43,8 +42,8 @@ export default {
         phone: [
           // bug
           // { type: 'number', message: '手机号码格式不正确', trigger: 'blur' },
+          { required: true, message: '手机号码不能为空' },
           {
-            required: true,
             validator (rule, value, callback, source, options) {
               const errors = []
               if (!/^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test(value)) {

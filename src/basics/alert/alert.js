@@ -9,7 +9,7 @@ function getMessageInstance () {
 }
 
 function notice ({ duration = 1.5, content = '' }) {
-  let instance = getMessageInstance()
+  const instance = getMessageInstance()
 
   instance.add({
     content: content,

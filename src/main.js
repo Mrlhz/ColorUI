@@ -8,7 +8,7 @@ import camelCase from 'lodash/camelCase'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Alert from './common/alert/alert'
+import Alert from 'basics/alert/alert'
 
 import '@/assets/stylesheets/reset.scss'
 import '@/assets/stylesheets/index.scss'
