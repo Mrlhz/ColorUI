@@ -1,8 +1,7 @@
-@import 'color';
-@import 'icon';
-@import 'grid';
-@import 'shadow';
-@import 'animation';
+@import 'reset';
+@import 'color/index.scss';
+@import 'common/index';
+@import 'components/index';
 
 // margin-top:15px
 .mt-15 {
@@ -120,4 +119,11 @@
 }
 .img8 {
   background-image: url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91005.jpg);
+}
+
+.loading-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%)
 }

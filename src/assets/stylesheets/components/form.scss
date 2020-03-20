@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* ==================
+        表单
+ ==================== */
+ .form-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: .48rem;
+  padding: .01rem .15rem;
+  // min-height: .65rem;
+  // background-color: #fff;
+  &:first-child {
+    margin-top: .1rem;
+  }
+}
+
+.form-item-label {
+  width: 1.5rem; // 20%
+  text-align: right;
+}
+
+.form-item-content {
+  position: relative;
+  width: 80%;
+  margin-left: .1rem;
+  display: flex;
+  flex-direction: column;
+  input {
+    height: .48rem; // 24px
+    border-radius: .08rem;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #606266;
+  }
+}
+
+.form-item-required:before {
+  content: '*';
+  color: red;
+}
+.form-item-error-tip {
+  position: absolute;
+  margin: .12rem 0;
+  top: 100%;
+  font-size: .24rem;
+  color: #ed4014;
+}
