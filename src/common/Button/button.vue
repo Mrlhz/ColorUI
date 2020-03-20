@@ -1,5 +1,5 @@
 <template>
-  <button :class="classes" :disabled="disabled">
+  <button :class="classes" :disabled="disabled" @click="handleClick">
     <span :class="icons" v-if="icon"></span>
     <slot></slot>
   </button>
@@ -21,7 +21,7 @@ export default {
         // ['small', 'large', 'middle', 'default']
         return oneOf(value, ['sm', 'lg', 'md', 'default'])
       },
-      default: 'default'
+      default: 'sm'
     },
     icon: {
       type: String,
@@ -45,6 +45,11 @@ export default {
     },
     icons () {
       return 'icon-' + this.icon
+    }
+  },
+  methods: {
+    handleClick () {
+      this.$emit('click', event)
     }
   }
 }
