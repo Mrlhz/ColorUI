@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ this.timeData }}
+    <slot v-bind:timeData="timeData"></slot>
   </div>
 </template>
 <script>
@@ -15,7 +15,7 @@ export default {
     millisecond: Boolean,
     format: {
       type: String,
-      default: 'HH:mm:ss'
+      default: '' // 'HH:mm:ss'
     },
     autoStart: {
       type: Boolean,
@@ -30,13 +30,30 @@ export default {
   computed: {
     timeData () {
       // console.log(this.parseTimeData(this.remain))
-      return this.parseTimeData(this.remain)
+      const t = this.parseTimeData(this.remain)
+      if (this.format !== '') {
+        return this.formatTime(this.format, t)
+      }
+      return t
     }
   },
   watch: {
     time: {
       immediate: true,
       handler: 'reset'
+    }
+  },
+  activated () {
+    if (this.keepAlivePaused) {
+      this.counting = true
+      this.keepAlivePaused = false
+      this.tick()
+    }
+  },
+  deactivated () {
+    if (this.counting) {
+      this.pause()
+      this.keepAlivePaused = true
     }
   },
   methods: {
@@ -51,7 +68,7 @@ export default {
     },
     reset () {
       this.pause()
-      this.remain = +this.time
+      this.remain = +this.time // todo
 
       if (this.autoStart) this.start()
     },
@@ -66,7 +83,17 @@ export default {
         this.macroTick()
       }
     },
-    microTick () {},
+    microTick () {
+      this.rafId = this.raf(() => {
+        if (!this.counting) return
+
+        this.setRemain(this.getRemain())
+
+        if (this.remain > 0) {
+          this.microTick()
+        }
+      })
+    },
     macroTick () {
       this.rafId = this.raf(() => {
         if (!this.counting) return
@@ -74,6 +101,7 @@ export default {
         const remain = this.getRemain()
 
         if (!this.isSameSecond(remain, this.remain) || remain === 0) {
+          console.log(remain === this.remain)
           this.setRemain(remain)
         }
 
@@ -110,14 +138,14 @@ export default {
       const milliseconds = Math.floor(time % SECOND)
 
       return {
-        days,
-        hours,
-        minutes,
-        seconds: this.formatTime(seconds),
+        days: this.pad(days),
+        hours: this.pad(hours),
+        minutes: this.pad(minutes),
+        seconds: this.pad(seconds),
         milliseconds
       }
     },
-    formatTime (n) {
+    pad (n) {
       return n * 1 > 9 ? n : `0${n}`
     },
     isSameSecond (time1, time2) {
@@ -125,6 +153,48 @@ export default {
     },
     raf (FrameRequestCallback) {
       return window.requestAnimationFrame(FrameRequestCallback)
+    },
+    formatTime (format = 'HH:mm:ss', time) {
+      const { days } = time
+      let { hours, minutes, seconds, milliseconds } = time
+
+      if (!format.includes('DD')) {
+        hours += hours * days
+      } else {
+        format = format.replace('DD', days)
+      }
+
+      if (!format.includes('HH')) {
+        minutes += hours * 60
+      } else {
+        format = format.replace('HH', hours)
+      }
+
+      if (!format.includes('mm')) {
+        seconds += minutes * 60
+      } else {
+        format = format.replace('mm', minutes)
+      }
+
+      if (!format.includes('ss')) {
+        milliseconds += seconds * 1000
+      } else {
+        format = format.replace('ss', seconds)
+      }
+
+      if (format.includes('S')) {
+        const ms = milliseconds.toString().padStart(3, 0)
+
+        if (format.includes('SSS')) {
+          format = format.replace('SSS', ms)
+        } else if (format.includes('SS')) {
+          format = format.replace('SS', ms.slice(0, 2))
+        } else {
+          format = format.replace('S', ms.charAt(0))
+        }
+      }
+
+      return format
     }
   }
 }
