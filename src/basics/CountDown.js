@@ -1,12 +1,16 @@
-<template>
-  <div>
-    <slot v-bind:timeData="timeData"></slot>
-  </div>
-</template>
-<script>
+import Slots from '../mixins/slots'
+
 export default {
-  // rafId
-  // remain ?
+  name: 'CountDown',
+  render () {
+    return (
+      <div>
+        { /* v-slot:default || formattedTime */ }
+        { this.slots('default', this.timeData) || this.formattedTime }
+      </div>
+    )
+  },
+  mixins: [Slots],
   props: {
     time: {
       type: [Number, String],
@@ -30,11 +34,10 @@ export default {
   computed: {
     timeData () {
       // console.log(this.parseTimeData(this.remain))
-      const t = this.parseTimeData(this.remain)
-      if (this.format !== '') {
-        return this.formatTime(this.format, t)
-      }
-      return t
+      return this.parseTimeData(this.remain)
+    },
+    formattedTime () {
+      return this.formatTime(this.format, this.timeData)
     }
   },
   watch: {
@@ -56,11 +59,12 @@ export default {
       this.keepAlivePaused = true
     }
   },
+  beforeDestroy () {
+    this.pause()
+  },
   methods: {
     start () {
       if (this.counting) return
-
-      // this.remain = +this.time
 
       this.counting = true
       this.endTime = Date.now() + this.remain
@@ -101,7 +105,6 @@ export default {
         const remain = this.getRemain()
 
         if (!this.isSameSecond(remain, this.remain) || remain === 0) {
-          console.log(remain === this.remain)
           this.setRemain(remain)
         }
 
@@ -138,10 +141,10 @@ export default {
       const milliseconds = Math.floor(time % SECOND)
 
       return {
-        days: this.pad(days),
-        hours: this.pad(hours),
-        minutes: this.pad(minutes),
-        seconds: this.pad(seconds),
+        days,
+        hours,
+        minutes,
+        seconds,
         milliseconds
       }
     },
@@ -161,29 +164,29 @@ export default {
       if (!format.includes('DD')) {
         hours += hours * days
       } else {
-        format = format.replace('DD', days)
+        format = format.replace('DD', this.pad(days))
       }
 
       if (!format.includes('HH')) {
         minutes += hours * 60
       } else {
-        format = format.replace('HH', hours)
+        format = format.replace('HH', this.pad(hours))
       }
 
       if (!format.includes('mm')) {
         seconds += minutes * 60
       } else {
-        format = format.replace('mm', minutes)
+        format = format.replace('mm', this.pad(minutes))
       }
 
       if (!format.includes('ss')) {
         milliseconds += seconds * 1000
       } else {
-        format = format.replace('ss', seconds)
+        format = format.replace('ss', this.pad(seconds))
       }
 
       if (format.includes('S')) {
-        const ms = milliseconds.toString().padStart(3, 0)
+        const ms = milliseconds.toString().padStart(3, '0')
 
         if (format.includes('SSS')) {
           format = format.replace('SSS', ms)
@@ -198,4 +201,3 @@ export default {
     }
   }
 }
-</script>
