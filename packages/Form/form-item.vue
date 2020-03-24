@@ -19,7 +19,7 @@
 <script>
 
 import AsyncValidator from 'async-validator'
-import Emitter from '../../mixins/emitter'
+import Emitter from 'mixins/emitter'
 
 export default {
   name: 'iFormItem',

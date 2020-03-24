@@ -8,11 +8,9 @@ import camelCase from 'lodash/camelCase'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Alert from 'basics/alert/alert'
+import Alert from 'packages/alert/alert'
 
-import '@/assets/stylesheets/reset.scss'
-import '@/assets/stylesheets/index.scss'
-import '@/assets/stylesheets/colorui.scss'
+// import '@/assets/stylesheets/index.scss'
 
 Vue.config.productionTip = false
 
@@ -59,7 +57,7 @@ function requireComponents () {
           .replace(/\.\w+$/, '')
       )
     )
-    console.log(componentName)
+    // console.log(componentName, componentConfig)
 
     // 全局注册组件
     Vue.component(

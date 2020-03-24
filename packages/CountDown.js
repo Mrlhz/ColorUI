@@ -1,4 +1,4 @@
-import Slots from '../mixins/slots'
+import Slots from 'mixins/slots'
 
 export default {
   name: 'CountDown',

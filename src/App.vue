@@ -23,7 +23,7 @@
 
 <script>
 
-import backTop from 'basics/backTop'
+import backTop from 'packages/backTop'
 const { colorList: colorListApp } = require('static/colorList.json')
 
 export default {
@@ -36,6 +36,8 @@ export default {
 }
 </script>
 <style lang="scss" scope>
+@import "assets/stylesheets/index.scss";
+
 #nav{
   position: fixed;
   left: auto;
