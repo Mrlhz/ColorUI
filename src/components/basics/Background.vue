@@ -30,14 +30,9 @@
 </template>
 
 <script>
-import Back from 'common/Back'
-import Bar from 'common/Bar'
 
 export default {
-  components: {
-    Back,
-    Bar
-  },
+  components: {},
   inject: ['colorListApp'],
   data () {
     return {

@@ -69,18 +69,18 @@
       </div>
     </div>
     <!--  -->
-    <div :class="['swal-overlay', show?'swal-overlay--show-modal':'']">
+    <div :class="['swal-overlay', show ? 'swal-overlay--show-modal':'']">
       <div class="swal-modal">
         <div class="swal-title solid-bottom">选择颜色</div>
         <div class="row" @click="handleClick">
-          <div :class="['item', 'bg-' + item.name]" v-for="item in list" :key="item.anme">{{item.title}}</div>
+          <div :class="['item', 'bg-' + item.name]" v-for="item in list" :key="item.name">{{item.title}}</div>
         </div>
         <div class="swal-footer">
           <div class="swal-button-container">
-            <button class="swal-button swal-button--cancel" @click="colse">取消</button>
+            <button class="swal-button swal-button--cancel" @click="close">取消</button>
           </div>
           <div class="swal-button-container">
-            <button class="swal-button swal-button--confirm" @click="colse">确定</button>
+            <button class="swal-button swal-button--confirm" @click="close">确定</button>
           </div>
         </div>
       </div>
@@ -112,14 +112,14 @@ export default {
       this.show = !this.show
       this.afterOpen()
     },
-    colse () {
+    close () {
       this.show = false
       this.beforeClose()
     },
     handleClick (e) {
       if (e.target.classList[0] === 'item') {
         this.className = e.target.classList[1]
-        this.colse()
+        this.close()
       }
     },
     afterOpen () {
@@ -145,7 +145,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/stylesheets/alert.scss";
 
 .progress {
   overflow: hidden;

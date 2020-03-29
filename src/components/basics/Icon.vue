@@ -19,14 +19,11 @@
 </template>
 
 <script>
-import Back from 'common/Back'
 
 const iconListData = require('../../../static/iconList.json')
 
 export default {
-  components: {
-    Back
-  },
+  components: {},
   data () {
     return {
       iconList: [],
@@ -44,9 +41,9 @@ export default {
     keyword () {
       // console.count('runs times')
       // TODO not good
-      let keyword = this.keyword
-      let list = iconListData.icon
-      let result = []
+      const keyword = this.keyword
+      const list = iconListData.icon
+      const result = []
       if (!this.keyword) this.iconList = iconListData.icon
       if (this.timer) clearTimeout(this.timer)
       this.timer = setTimeout(() => {

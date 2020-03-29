@@ -19,17 +19,14 @@
 </template>
 
 <script>
-import Back from 'common/Back'
 // import Scroll from '@/base/Scroll'
 import BScroll from 'better-scroll'
 
 import normalizeList from 'api/indexes'
-const singerList = require('static/singer.json')
+const singerList = require('static/singer.min.json')
 
 export default {
-  components: {
-    Back
-  },
+  components: {},
   data () {
     return {
       list: [],

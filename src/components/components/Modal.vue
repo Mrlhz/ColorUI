@@ -25,14 +25,9 @@
 </template>
 
 <script>
-import Back from 'common/Back'
-import Bar from 'common/Bar'
 
 export default {
-  components: {
-    Back,
-    Bar
-  },
+  components: {},
   data () {
     return {
       show: false
@@ -50,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/stylesheets/alert.scss";
+// @import "assets/stylesheets/components/alert.scss";
 
 .box {
   display: flex;

@@ -57,14 +57,14 @@
   </div>
 </template>
 <script>
-import CountDown from '../../basics/CountDown'
+import CountDown from 'packages/CountDown'
 export default {
   components: {
     CountDown
   },
   data () {
     return {
-      time: +new Date('2020/03/26 00:00:00') - Date.now(),
+      time: +new Date('2020/06/26 00:00:00') - Date.now(),
       autoStart: false,
       t100: 100,
       t1000: 1000

@@ -20,9 +20,9 @@
 </template>
 <script>
 
-import iForm from 'basics/Form/form'
-import iFormItem from 'basics/Form/form-item'
-import iInput from 'basics/Form/input'
+import iForm from 'packages/Form/form'
+import iFormItem from 'packages/Form/form-item'
+import iInput from 'packages/Form/input'
 
 export default {
   components: { iForm, iFormItem, iInput },
