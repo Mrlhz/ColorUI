@@ -11,7 +11,7 @@ Vue.use(Router)
  * @param {*} dir
  * @param {*} context
  * @returns
- * @todo 可以把`basics`，`components`，`plugin`统一处理，减少全局变量
+ * @todo `basics`，`components`，`plugin`统一处理
  */
 function getRouters () {
   // require.context中要搜索的目录不能动态拼接，true 搜索它的子目录

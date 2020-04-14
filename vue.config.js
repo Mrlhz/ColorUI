@@ -16,32 +16,22 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    // const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-    // types.forEach(type => addStyleResource(config.module.rule('scss').oneOf(type)))
     config.resolve.alias
       .set('@', resolve('src'))
       .set('api', resolve('src/api'))
       .set('assets', resolve('src/assets'))
-      .set('basics', resolve('src/basics'))
       .set('common', resolve('src/common'))
       .set('components', resolve('src/components'))
       .set('static', resolve('static'))
+      .set('packages', resolve('packages'))
+      .set('mixins', resolve('src/mixins'))
   },
   configureWebpack: {
+    devtool: 'source-map',
     plugins: [
       new BundleAnalyzerPlugin()
     ]
   }
-}
-
-function addStyleResource (rule) {
-  rule.use('style-resource')
-    .loader('style-resources-loader')
-    .options({
-      patterns: [
-        path.resolve(__dirname, './src/assets/stylesheets/imports.scss')
-      ]
-    })
 }
 
 function resolve (dir) {

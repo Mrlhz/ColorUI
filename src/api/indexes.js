@@ -10,7 +10,7 @@ const HOT_SINGER_LEN = 10 // 热门条目
 const HOT_NAME = '热门'
 
 export function _normalizeList (list) {
-  let types = []
+  const types = []
   list.forEach((ele) => {
     if (types.indexOf(ele.Findex) === -1 && ele.Findex.match(/[a-zA-Z]/)) {
       types.push(ele.Findex)
@@ -20,7 +20,7 @@ export function _normalizeList (list) {
   // types = types.filter((el) => {
   //   return el.match(/[a-zA-Z]/)
   // })
-  let lists = []
+  const lists = []
   types.sort().forEach((el) => {
     lists.push({
       title: el,
