@@ -7,7 +7,7 @@
 
 <script>
 // @ is an alias to /src
-import HomeList from 'basics/List.vue'
+import HomeList from 'packages/List.vue'
 
 const elements = require('static/elements.json')
 
