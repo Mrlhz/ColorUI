@@ -1,19 +1,22 @@
 const path = require('path')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const { defineConfig } = require('@vue/cli-service')
 
-module.exports = {
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+module.exports = defineConfig({
+  transpileDependencies: true,
   publicPath: '/',
   outputDir: 'dist',
   lintOnSave: true,
   css: {
-    loaderOptions: {
-      // 给 sass-loader 传递选项
-      sass: {
-        // @/ 是 src/ 的别名
-        // 所以这里假设你有 `src/assets/stylesheets/imports.scss` 这个文件
-        prependData: "@import '@/assets/stylesheets/imports.scss';"
-      }
-    }
+    // loaderOptions: {
+    //   // 给 sass-loader 传递选项
+    //   sass: {
+    //     // @/ 是 src/ 的别名
+    //     // 所以这里假设你有 `src/assets/stylesheets/imports.scss` 这个文件
+    //     prependData: "@import '@/assets/stylesheets/imports.scss';"
+    //   }
+    // }
   },
   chainWebpack: config => {
     config.resolve.alias
@@ -29,10 +32,10 @@ module.exports = {
   configureWebpack: {
     devtool: 'source-map',
     plugins: [
-      new BundleAnalyzerPlugin()
+      // new BundleAnalyzerPlugin()
     ]
   }
-}
+})
 
 function resolve (dir) {
   return path.join(__dirname, dir)
