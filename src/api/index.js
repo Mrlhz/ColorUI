@@ -1,6 +1,9 @@
-import { get } from './get'
+// import { get } from './get'
+import componentJSON from '../../static/component.json'
 
-const getComponentList = get('https://api.myjson.com/bins/11y27m')
+function getComponentList () {
+  return Promise.resolve(componentJSON.data)
+}
 
 export {
   getComponentList

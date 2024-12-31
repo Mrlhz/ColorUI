@@ -22,10 +22,11 @@ export default {
     HomeList
   },
   methods: {
-    getHomeSucc () {
-      const componentLocalList = localStorage.getItem('componentList')
-      if (componentLocalList) {
-        const componentList = JSON.parse(componentLocalList)
+    async getHomeSucc () {
+      const _componentLocalList = localStorage.getItem('componentList')
+      const componentLocalList = await Promise.try(() => JSON.parse(_componentLocalList)).catch(() => [])
+      if (Array.isArray(componentLocalList) && componentLocalList.length) {
+        const componentList = componentLocalList
         this.list = componentList
       } else {
         getComponentList().then(({ elements }) => {
